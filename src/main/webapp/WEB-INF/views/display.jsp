@@ -13,12 +13,22 @@
 </head>
 <body>
 
+<table>
+    <!-- here should go some titles... -->
+    <tr>
+        <th>Kiddo Name</th>
+    </tr>
+
 <!-- special tag library see maven dependency with JSTL -->
 <c:forEach items="${kiddos}" var="kiddo" >
 
-
-    <c:out value="${kiddo}"/>
-
+    <tr>
+        <td>
+            <c:out value="${kiddo}"/>
+        </td>
+    </tr>
 </c:forEach>
+
+</table>
 </body>
 </html>
