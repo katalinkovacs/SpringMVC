@@ -1,18 +1,13 @@
 <html>
   <head>
-    <title>Welcome from JSP - Title!</title>
+    <title>Welcome JSP - Title!</title>
   </head>
   <body>
-    <!-- The name is: ${nameToForward} and the password is ${password} -->
-    <!-- Katis First JSP!!! ${nameToForward} -->
-
-    <form action="/welcome" method="POST">
-    		Enter your Name: <input type="text" name="username"/> <input type="submit" value="Login" />
-    </form>
+    WELCOME MY FRIEND ${usernameOnJSP}
+    <!-- The name is: ${usernameOnJSP} and the password is ${passwordOnJSP} -->
 
     <%
-       System.out.println("Java in JSP");
-       System.out.println(request.getParameter("username"));
+       System.out.println("The username in welcome.jsp is: " +request.getParameter("usernameOnJSP"));
     %>
 
   </body>
@@ -20,3 +15,5 @@
 
 
 
+<!-- Valid user Go to welcome page -->
+<!-- NOT Valid user Go to login page -->

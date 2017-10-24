@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = "/welcome")
+@WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
+
+
+    private UserValidationService service = new UserValidationService();
 
 /*
     // USING SERVLET
@@ -31,28 +34,50 @@ public class LoginServlet extends HttpServlet {
 
     // USING JSP
 
+    //DO GET METHOD
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        //request.setAttribute("name", request.getParameter("name"));   //??????????????????????????????
+        // get parameters are coming from browser url after ?
 
-        //System.out.println(request.getParameter("name"));      //??????????????????????????????
+        //String userName = request.getParameter("username");
+        //request.setAttribute("usernameOnJSP", userName);
 
-        /*request.setAttribute("name", request.getParameter("name"));
-        request.setAttribute("password", request.getParameter("password"));
+        request.setAttribute("usernameOnJSP", request.getParameter("username"));
+        request.setAttribute("passwordOnJSP", request.getParameter("password"));
 
-
-
-        request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
-*/
-
-        String userName = request.getParameter("username");
-
-        request.setAttribute("nameToForward", userName);
-
-
-        request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
-
-
+        request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
     }
+
+
+    //DO POST METHOD
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+
+        String name = request.getParameter("usernameOnJSP");
+        String password = request.getParameter("passwordOnJSP");
+
+        boolean userValid = service.isUserValid(name, password);
+
+        if (userValid) {
+            request.setAttribute("usernameOnJSP", name);
+            request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+        } else {
+            request.setAttribute("errorMessage", "Invalid Credentials!!");
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        }
+
+
+      /*
+        // post request is coming from jsp page where the variables are called nameOnJSP and passwordOnJSP
+        request.setAttribute("usernameOnJSP", request.getParameter("usernameOnJSP"));
+        request.setAttribute("passwordOnJSP", request.getParameter("passwordOnJSP"));
+
+        request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+
+     */
+    }
+
+
 }
