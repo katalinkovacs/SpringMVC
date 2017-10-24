@@ -1,4 +1,4 @@
-package spring;
+package mydynamicpages;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +11,7 @@ public class LoginController {
     @ResponseBody
     public String sayHello(){
 
-        return "Hello Kati!";
+        return "Hellobello!";
+
     }
-
-
 }
