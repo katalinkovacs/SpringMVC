@@ -4,12 +4,12 @@
   </head>
   <body>
     Please LOGIN!
-    The current name is: ${usernameOnJSP} and the password is ${passwordOnJSP}
+    The current name is: ${userName} and the password is ${password}
 
     <p> <font color="red"> ${errorMessage} </font> </p>
     <form action="login" method="post">
-    		Please enter your Name: <input type="text" name="usernameOnJSP"/>
-    		Please enter your Password: <input type="text" name="passwordOnJSP" />
+    		Please enter your Name: <input type="text" name="userName"/>
+    		Please enter your Password: <input type="text" name="password" />
     		<input type="submit" value="Login" />
     </form>
 
