@@ -4,7 +4,7 @@
   </head>
   <body>
     Please LOGIN!
-    <!-- The name is: ${usernameOnJSP} and the password is ${passwordOnJSP} -->
+    The current name is: ${usernameOnJSP} and the password is ${passwordOnJSP}
 
     <p> <font color="red"> ${errorMessage} </font> </p>
     <form action="login" method="post">
