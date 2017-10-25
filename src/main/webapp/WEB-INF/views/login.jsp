@@ -8,9 +8,9 @@
      Please LOGIN!
      <br>
      The current name/userName is - : ${userName} AND the password/password is:  ${password}
-     <br>
+     <%--<br>
      The current name/usernameOnJSP is: ${usernameOnJSP} AND the password/passwordOnJSP is:  ${passwordOnJSP}
-     <br>
+     <br>--%>
 
     <p> <font color="red"> ${errorMessage} </font> </p>
     <form action="login" method="post">

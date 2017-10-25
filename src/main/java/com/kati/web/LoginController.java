@@ -24,6 +24,6 @@ public class LoginController {
     public String loginPost(User formData, Model model) {
         model.addAttribute("userName", formData.getUserName());
         model.addAttribute("password" , formData.getPassword());
-        return "login";
+        return "welcome";
     }
 }
