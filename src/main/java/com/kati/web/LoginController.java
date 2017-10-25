@@ -12,7 +12,7 @@ public class LoginController {
     // when invoked from browser using url /login then it will be a get
     @RequestMapping(method = RequestMethod.GET)
     public String login(Model model) {
-        model.addAttribute("userName", "Stranger");
+        model.addAttribute("userName", "Stranger");         // NOT PRINTED ON SERVER!!!!!!!!!! --> NULL
         model.addAttribute("password" , "StrangerPassword");
         return "login";
     }
