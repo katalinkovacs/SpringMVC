@@ -22,7 +22,8 @@
     <%
        System.out.println("Java in LOGIN.JSP");
        System.out.println("The userName is: " +request.getParameter("userName"));
-       System.out.println("The usernameOnJSP is: " +request.getParameter("usernameOnJSP"));
+       //System.out.println("The usernameOnJSP is: " +request.getParameter("usernameOnJSP"));
+
     %>
 
   </body>

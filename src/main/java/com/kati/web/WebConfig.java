@@ -13,15 +13,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
 @Configuration
-@EnableWebMvc
-@ComponentScan("com.kati.web")  //scanning your package for components
+@EnableWebMvc                                               // Enable Spring MVC
+@ComponentScan("com.kati.web")                              // Enable component scanning --> scanning your package for components
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 
     @Bean
     public ViewResolver viewResolver() {
 
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();  // Configure a JSP view resolver
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
         return resolver;
@@ -34,7 +34,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {   //Configure static content handling
 
         configurer.enable();
     }

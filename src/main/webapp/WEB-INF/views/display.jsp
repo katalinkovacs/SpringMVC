@@ -20,11 +20,11 @@
     </tr>
 
 <!-- special tag library see maven dependency with JSTL -->
-<c:forEach items="${kiddos}" var="kiddo" >
+<c:forEach items="${kiddos}" var="kiddoForLooping" >
 
     <tr>
         <td>
-            <c:out value="${kiddo}"/>
+            <c:out value="${kiddoForLooping}"/>
         </td>
     </tr>
 </c:forEach>

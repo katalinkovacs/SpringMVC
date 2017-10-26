@@ -5,16 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+@Controller                         // Declared to be a controller
 @RequestMapping(value = "/login")
 public class LoginController {
 
     // when invoked from browser using url /login then it will be a get
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)                           //  Handle GET requests for /  ???????????????
     public String login(Model model) {
         model.addAttribute("userName", "Stranger");         // NOT PRINTED ON SERVER!!!!!!!!!! --> NULL
         model.addAttribute("password" , "StrangerPassword");
-        return "login";
+        return "login";                // View name is login
     }
 
 
@@ -24,6 +24,6 @@ public class LoginController {
     public String loginPost(User formData, Model model) {
         model.addAttribute("userName", formData.getUserName());
         model.addAttribute("password" , formData.getPassword());
-        return "welcome";
+        return "hello";              // View name
     }
 }

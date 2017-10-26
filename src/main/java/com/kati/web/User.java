@@ -6,6 +6,9 @@ public class User {
 
     private String password;
 
+    private String Name;
+
+
     public String getUserName() {
 
         return userName;
@@ -24,5 +27,13 @@ public class User {
     public void setPassword(String password) {
 
         this.password = password;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 }

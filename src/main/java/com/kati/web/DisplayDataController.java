@@ -7,20 +7,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
 @Controller
 @RequestMapping(value = "/display")
 public class DisplayDataController {
 
 
     // when invoked from browser using url /login then it will be a get
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = GET)
     public String login(Model model) {
 
-        ArrayList<String> kiddos = new ArrayList<>();
-        kiddos.add("Sebastian");
-        kiddos.add("Oliver");
-        kiddos.add("Kornel");
-        model.addAttribute("kiddos", kiddos);
+        ArrayList<String> kiddosList = new ArrayList<>();
+        kiddosList.add("Sebastian");
+        kiddosList.add("Oliver");
+        kiddosList.add("Kornel");
+        model.addAttribute("kiddos", kiddosList);   //name of attribute + value pair
         return "display";
     }
 
