@@ -39,7 +39,7 @@
 
         <!-- ADDED 26.10.2017 -->
         <!-- Tag libs support for view layer -->
-
+<!--
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -59,15 +59,11 @@
             <artifactId>spring-web</artifactId>
             <version>4.1.4.RELEASE</version>
         </dependency>
-
+-->
     </dependencies>
 
 
     <build>
-
-        <!--    ADDED 26.10.2017  -->
-        <finalName>springmvcexample</finalName>
-        <!--    DO I NEED THIS FINALNAME?????  -->
 
 
         <plugins>
